@@ -1,0 +1,10 @@
+{
+  "connection": "memory",
+  "properties": [
+    "id:string:255:primary:true",
+    "content:object",
+    "coll::50:true",
+    "oids:text",
+    "exp:datetime"
+  ]
+}

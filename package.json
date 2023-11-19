@@ -1,0 +1,29 @@
+{
+  "name": "bajo-cache",
+  "version": "0.2.0",
+  "description": "Cache Engine for Bajo Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardhi/bajo-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "bajo",
+    "framework",
+    "modular"
+  ],
+  "author": "Ardhi Lukianto <ardhi@lukianto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ardhi/bajo-cache/issues"
+  },
+  "homepage": "https://github.com/ardhi/bajo-cache#readme",
+  "dependencies": {
+    "keyv": "^4.5.4"
+  }
+}

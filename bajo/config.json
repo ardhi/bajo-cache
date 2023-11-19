@@ -1,0 +1,9 @@
+{
+  "alias": "cache",
+  "connection": "memory",
+  "collection": {
+    "disabled": [],
+    "defTtl": 1000,
+    "ttl": {}
+  }
+}

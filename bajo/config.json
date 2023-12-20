@@ -5,5 +5,6 @@
     "disabled": [],
     "defTtl": 1000,
     "ttl": {}
-  }
+  },
+  "dependencies": ["bajo-db"]
 }

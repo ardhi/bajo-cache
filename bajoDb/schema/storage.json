@@ -1,7 +1,7 @@
 {
   "connection": "memory",
   "properties": [
-    "id:string:255:primary:true",
+    "id:string:4096:primary:true",
     "content:object",
     "coll::50:true",
     "oids:text",

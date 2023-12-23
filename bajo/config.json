@@ -4,7 +4,9 @@
   "collection": {
     "disabled": [],
     "defTtl": 1000,
-    "ttl": {}
+    "defClearOnTrigger": false,
+    "ttl": {},
+    "clearOnTrigger": {}
   },
   "dependencies": ["bajo-db"]
 }

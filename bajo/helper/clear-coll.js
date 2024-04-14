@@ -13,9 +13,9 @@ async function clearColl ({ coll, id, body, record, options } = {}) {
     if (id) action = body ? 'update' : 'remove'
     */
     const query = { coll }
-    const recs = await recordFind('CacheStorage', { query, limit: 1000 }, { skipHook: true, skipCache: true })
+    const recs = await recordFind('CacheStorage', { query, limit: 1000 }, { noHook: true, noCache: true })
     for (const r of recs) {
-      await recordRemove('CacheStorage', r.id, { skipHook: true })
+      await recordRemove('CacheStorage', r.id, { noHook: true })
     }
   } catch (err) {}
 }

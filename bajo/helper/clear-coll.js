@@ -5,7 +5,7 @@ async function clearColl ({ coll, id, body, record, options } = {}) {
   const clear = cfg.collection.clearOnTrigger[coll] ?? cfg.collection.defClearOnTrigger
   if (!clear) return
   try {
-    const { connection } = await getInfo(coll)
+    const { connection } = getInfo(coll)
     if (connection.memory) return false
     if (cfg.collection.disabled.includes(coll)) return
     /*

@@ -1,6 +1,6 @@
 {
   "name": "bajo-cache",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Cache Engine for Bajo Framework",
   "main": "index.js",
   "scripts": {

@@ -9,7 +9,7 @@ async function start () {
     keyv = new Keyv({ store })
   } else keyv = new Keyv()
   this.instance = keyv
-  this.app.dobo.cache = { get, set }
+  if (this.app.dobo) this.app.dobo.cache = { get, set }
 }
 
 export default start

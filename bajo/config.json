@@ -1,12 +1,14 @@
 {
   "alias": "cache",
   "connection": "memory",
-  "collection": {
+  "default": {
+    "ttl": 1000,
+    "clearOnTrigger": false
+  },
+  "doboModel": {
     "disabled": [],
-    "defTtl": 1000,
-    "defClearOnTrigger": false,
     "ttl": {},
     "clearOnTrigger": {}
   },
-  "dependencies": ["bajo-db"]
+  "dependencies": []
 }

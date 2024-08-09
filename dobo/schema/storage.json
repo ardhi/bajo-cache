@@ -3,7 +3,7 @@
   "properties": [
     "id:string:4096:primary:true",
     "content:object",
-    "coll::50:true",
+    "model::50:true",
     "oids:text",
     "exp:datetime"
   ]

@@ -10,5 +10,6 @@
     "ttl": {},
     "clearOnTrigger": {}
   },
+  "externalPrefix": "ext",
   "dependencies": []
 }

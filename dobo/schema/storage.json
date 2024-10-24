@@ -1,4 +1,5 @@
 {
+  "disabled": "all",
   "connection": "memory",
   "properties": [
     "id:string:4096:primary:true",

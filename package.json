@@ -1,6 +1,6 @@
 {
   "name": "bajo-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cache Engine for Bajo Framework",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/ardhi/bajo-cache#readme",
   "dependencies": {
-    "keyv": "^4.5.4"
+    "keyv": "^5.2.3"
   }
 }

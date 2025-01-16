@@ -1,5 +1,4 @@
 {
-  "alias": "cache",
   "connection": "memory",
   "default": {
     "ttl": 1000,

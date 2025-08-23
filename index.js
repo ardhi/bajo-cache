@@ -5,7 +5,7 @@ import removeExpired from './lib/remove-expired.js'
 async function factory (pkgName) {
   const me = this
 
-  return class BajoCache extends this.lib.BajoPlugin {
+  return class BajoCache extends this.lib.Plugin {
     constructor () {
       super(pkgName, me.app)
       this.alias = 'cache'

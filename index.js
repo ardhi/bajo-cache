@@ -6,9 +6,10 @@ async function factory (pkgName) {
   const me = this
 
   return class BajoCache extends this.lib.Plugin {
+    static alias = 'cache'
+
     constructor () {
       super(pkgName, me.app)
-      this.alias = 'cache'
       this.config = {
         connection: 'memory',
         default: {

@@ -2,10 +2,21 @@ import Keyv from 'keyv'
 import Store from './lib/store.js'
 import removeExpired from './lib/remove-expired.js'
 
+/**
+ * Plugin factory
+ *
+ * @param {string} pkgName - NPM package name
+ * @returns {class}
+ */
 async function factory (pkgName) {
   const me = this
 
-  return class BajoCache extends this.app.pluginClass.base {
+  /**
+   * BajoCache class
+   *
+   * @class
+   */
+  class BajoCache extends this.app.pluginClass.base {
     static alias = 'cache'
 
     constructor () {
@@ -45,6 +56,8 @@ async function factory (pkgName) {
       setInterval(fn, 1000)
     }
   }
+
+  return BajoCache
 }
 
 export default factory

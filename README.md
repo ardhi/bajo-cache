@@ -1,22 +1,25 @@
 # bajo-cache
 
-Plugin name: **bajoCache**, alias: **cache**
-
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ardhi/bajo-cache) ![NPM Version](https://img.shields.io/npm/v/bajo-cache)
 
-> <br />**Attention**: I do NOT accept any pull request at the moment, thanks!<br /><br />
+> <br />**Attention**: I do NOT accept any pull requests at the moment, thanks! ([Why?](https://github.com/ardhi/bajo/blob/main/tutorial/00-welcome.md#contribution))<br /><br />
 
-Universal cache for [Bajo](https://github.com/ardhi/bajo). If [Dobo](https://github.com/ardhi/dobo) is loaded, it'll automatically cache result set too.
+Universal Cache Engine for [Bajo](https://github.com/ardhi/bajo)
 
 ## Installation
 
-Goto your ```<bajo-base-dir>``` and type:
+First, go to your ```{app-dir}``` and run the following command in your terminal:
 
 ```bash
 $ npm install bajo-cache
 ```
 
-Now open your ```<bajo-data-dir>/config/.plugins``` and put ```bajo-cache``` in it:
+Next, open the file located at ```{data-dir}/config/.plugins``` and add ```bajo-cache```
+
+## Documentations
+
+- [Config Object](tutorial/00-config.md)
+- [API](https://ardhi.github.io/bajo-cache)
 
 ## License
 

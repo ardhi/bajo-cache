@@ -2,9 +2,9 @@
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ardhi/bajo-cache) ![NPM Version](https://img.shields.io/npm/v/bajo-cache)
 
-> <br />**Attention**: I do NOT accept any pull request at the moment, thanks! ([Why?](CONTRIBUTING.md))<br /><br />
+> <br />**Attention**: I do NOT accept any pull request at the moment, thanks! ([Why?](wiki/CONTRIBUTING.md))<br /><br />
 
-Universal Cache Engine for [Bajo](https://github.com/ardhi/bajo)
+Universal Cache Engine for [Bajo](https://github.com/ardhi/bajo).
 
 ## Installation
 
@@ -18,9 +18,9 @@ Next, open the file located at ```{data-dir}/config/.plugins``` and add ```bajo-
 
 ## Documentations
 
-- [Config Object](tutorial/00-config.md)
+- [Config Object](wiki/CONFIG.md)
 - [API](https://ardhi.github.io/bajo-cache)
-- [Contributing](CONTRIBUTING.md)
+- [Contributing](wiki/CONTRIBUTING.md)
 
 ## Hire Me
 

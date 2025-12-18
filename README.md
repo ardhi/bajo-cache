@@ -8,13 +8,13 @@ Universal Cache Engine for [Bajo](https://github.com/ardhi/bajo).
 
 ## Installation
 
-First, go to your ```{app-dir}``` and run the following command in your terminal:
+Go to your ```{app-dir}``` and run the following command in your terminal:
 
 ```bash
 $ npm install bajo-cache
 ```
 
-Next, open the file located at ```{data-dir}/config/.plugins``` and add ```bajo-cache```
+And enable the plugin by adding ```bajo-cache``` to the plugin list in either the ```$dataDir/config/.plugins``` file or the ```bajo.plugins``` array within your ```package.json``` file
 
 ## Documentations
 

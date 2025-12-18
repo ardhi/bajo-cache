@@ -2,10 +2,10 @@
   "disabled": "all",
   "connection": "memory",
   "properties": [
-    "id:string:4096:primary:true",
-    "content:object",
-    "model::50:true",
-    "oids:text",
-    "exp:datetime"
+    "id,string,4096,primary,true",
+    "content,object",
+    "model,,50,true",
+    "oids,text",
+    "exp,datetime"
   ]
 }

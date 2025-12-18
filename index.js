@@ -1,6 +1,15 @@
 import Keyv from 'keyv'
 import Store from './lib/store.js'
 import removeExpired from './lib/remove-expired.js'
+import getRs from './lib/result-set/get.js'
+import getGeneric from './lib/generic/get.js'
+import getFn from './lib/function/get.js'
+import removeRs from './lib/result-set/remove.js'
+import removeGeneric from './lib/generic/remove.js'
+import removeFn from './lib/function/remove.js'
+import setRs from './lib/result-set/set.js'
+import setGeneric from './lib/generic/set.js'
+import setFn from './lib/function/set.js'
 
 /**
  * Plugin factory
@@ -39,7 +48,7 @@ async function factory (pkgName) {
     init = async () => {
       this.fnCache = []
       if (!this.app.dobo) return
-      const models = this.app.dobo.schemas.filter(s => s.connection === 'memory').map(m => m.name)
+      const models = this.app.dobo.models.filter(model => model.connection.name === 'memory').map(m => m.name)
       this.config.doboModel.disabled.push('CacheStorage', ...models)
     }
 
@@ -54,6 +63,46 @@ async function factory (pkgName) {
       if (this.app.dobo) this.app.dobo.cache = { get, set }
       const fn = removeExpired.bind(this)
       setInterval(fn, 1000)
+    }
+
+    clearModel = async ({ model, id, body, record, options } = {}) => {
+      if (this.app.dobo.getModel(model).driver.name === 'memory') return
+      if (this.config.doboModel.disabled.includes(model)) return
+      const clear = this.config.doboModel.clearOnTrigger[model] ?? this.config.default.clearOnTrigger
+      if (!clear) return
+      try {
+        const storage = this.app.dobo.getModel('CacheStorage')
+        const query = { model }
+        const recs = await storage.findAllRecord({ query }, { noHook: true, noCache: true })
+        for (const r of recs) {
+          await storage.removeRecord(r.id, { noHook: true })
+        }
+      } catch (err) {}
+    }
+
+    get = async (opts = {}) => {
+      if (opts.model && (opts.filter || opts.id)) return await getRs.call(this, opts)
+      if (opts.key.startsWith('fn:')) return await getFn.call(this, opts)
+      return await getGeneric.call(this, opts)
+    }
+
+    remove = async (opts = {}) => {
+      if (opts.model && (opts.filter || opts.id)) return await removeRs.call(this, opts)
+      if (opts.key.startsWith('fn:')) return await removeFn.call(this, opts)
+      return await removeGeneric.call(this, opts)
+    }
+
+    set = async (opts = {}) => {
+      if (opts.model && (opts.filter || opts.id)) return await setRs.call(this, opts)
+      if (opts.key.startsWith('fn:')) return await setFn.call(this, opts)
+      return await setGeneric.call(this, opts)
+    }
+
+    sync = async (opts) => {
+      const item = await this.get(opts)
+      if (item) return item
+      await this.set(opts)
+      return opts.value
     }
   }
 

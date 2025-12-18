@@ -1,6 +1,7 @@
 {
   "disabled": "all",
   "connection": "memory",
+  "cacheable": false,
   "properties": [
     "id,string,4096,primary,true",
     "content,object",

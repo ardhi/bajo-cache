@@ -48,14 +48,14 @@ async function factory (pkgName) {
     init = async () => {
       this.fnCache = []
       if (!this.app.dobo) return
-      const models = this.app.dobo.models.filter(model => model.connection.name === 'memory').map(m => m.name)
+      const models = this.app.dobo.models.filter(model => !model.cacheable).map(m => m.name)
       this.config.doboModel.disabled.push('CacheStorage', ...models)
     }
 
     start = async () => {
       const { set, get } = this
       let keyv
-      if (this.app.dobo && this.app.dobo.getConnection('memory')) {
+      if (this.app.dobo) {
         const store = new Store(this)
         keyv = new Keyv({ store })
       } else keyv = new Keyv()
@@ -66,7 +66,6 @@ async function factory (pkgName) {
     }
 
     clearModel = async ({ model, id, body, record, options } = {}) => {
-      if (this.app.dobo.getModel(model).driver.name === 'memory') return
       if (this.config.doboModel.disabled.includes(model)) return
       const clear = this.config.doboModel.clearOnTrigger[model] ?? this.config.default.clearOnTrigger
       if (!clear) return

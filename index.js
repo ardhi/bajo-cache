@@ -53,19 +53,19 @@ async function factory (pkgName) {
     }
 
     start = async () => {
-      const { set, get } = this
+      const { set, get, clear } = this
       let keyv
       if (this.app.dobo) {
         const store = new Store(this)
         keyv = new Keyv({ store })
       } else keyv = new Keyv()
       this.instance = keyv
-      if (this.app.dobo) this.app.dobo.cache = { get, set }
+      if (this.app.dobo) this.app.dobo.cache = { get, set, clear }
       const fn = removeExpired.bind(this)
       setInterval(fn, 1000)
     }
 
-    clearModel = async ({ model, id, body, record, options } = {}) => {
+    clear = async ({ model }) => {
       if (this.config.doboModel.disabled.includes(model)) return
       const clear = this.config.doboModel.clearOnTrigger[model] ?? this.config.default.clearOnTrigger
       if (!clear) return

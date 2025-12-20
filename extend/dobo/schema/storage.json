@@ -6,6 +6,8 @@
     "id,string,4096,primary,true",
     "content,object",
     "model,,50,true",
+    "siteId,,50,true",
+    "userId,,50,true",
     "oids,text",
     "exp,datetime"
   ]

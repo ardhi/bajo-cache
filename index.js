@@ -65,13 +65,16 @@ async function factory (pkgName) {
       setInterval(fn, 1000)
     }
 
-    clear = async ({ model }) => {
+    clear = async (opts = {}) => {
+      const { model, siteId, userId } = opts
       if (this.config.doboModel.disabled.includes(model)) return
       const clear = this.config.doboModel.clearOnTrigger[model] ?? this.config.default.clearOnTrigger
       if (!clear) return
       try {
         const storage = this.app.dobo.getModel('CacheStorage')
         const query = { model }
+        if (siteId) query.siteId = siteId
+        if (userId) query.userId = userId
         const recs = await storage.findAllRecord({ query }, { noHook: true, noCache: true })
         for (const r of recs) {
           await storage.removeRecord(r.id, { noHook: true })

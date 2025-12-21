@@ -10,6 +10,9 @@ import removeFn from './lib/function/remove.js'
 import setRs from './lib/result-set/set.js'
 import setGeneric from './lib/generic/set.js'
 import setFn from './lib/function/set.js'
+import clearRs from './lib/result-set/clear.js'
+import clearFn from './lib/function/clear.js'
+import clearGeneric from './lib/generic/clear.js'
 
 /**
  * Plugin factory
@@ -66,20 +69,9 @@ async function factory (pkgName) {
     }
 
     clear = async (opts = {}) => {
-      const { model, siteId, userId } = opts
-      if (this.config.doboModel.disabled.includes(model)) return
-      const clear = this.config.doboModel.clearOnTrigger[model] ?? this.config.default.clearOnTrigger
-      if (!clear) return
-      try {
-        const storage = this.app.dobo.getModel('CacheStorage')
-        const query = { model }
-        if (siteId) query.siteId = siteId
-        if (userId) query.userId = userId
-        const recs = await storage.findAllRecord({ query }, { noHook: true, noCache: true })
-        for (const r of recs) {
-          await storage.removeRecord(r.id, { noHook: true })
-        }
-      } catch (err) {}
+      if (opts.model) return await clearRs.call(this, opts)
+      if (opts.key.startsWith('fn:')) return await clearFn.call(this, opts)
+      return await clearGeneric.call(this, opts)
     }
 
     get = async (opts = {}) => {

@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-21
+
+- Set, get & clear operations for result sets now handled automatically via system hooks
+
 ## 2025-12-18
 
 - Upgrade to ```keyv@5.5.5```

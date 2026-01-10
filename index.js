@@ -28,9 +28,7 @@ async function factory (pkgName) {
    *
    * @class
    */
-  class BajoCache extends this.app.pluginClass.base {
-    static alias = 'cache'
-
+  class BajoCache extends this.app.baseClass.Base {
     constructor () {
       super(pkgName, me.app)
       this.config = {

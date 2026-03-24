@@ -1,14 +1,12 @@
 {
   "disabled": "all",
   "connection": "memory",
-  "cacheable": false,
+  "cache": false,
   "properties": [
     "id,string,4096,primary,true",
-    "content,object",
+    "content,text",
     "model,,50,true",
-    "siteId,,50,true",
-    "userId,,50,true",
-    "oids,text",
-    "exp,datetime"
+    "ids,text",
+    "exp,integer"
   ]
 }

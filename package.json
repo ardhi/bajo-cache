@@ -1,6 +1,6 @@
 {
   "name": "bajo-cache",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Cache Engine for Bajo Framework",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ardhi/bajo-cache#readme",
   "dependencies": {
-    "keyv": "^5.5.5"
+    "keyv": "^5.6.0"
   },
   "devDependencies": {
     "clean-jsdoc-theme": "^4.3.0",

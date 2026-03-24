@@ -1,0 +1,5 @@
+{
+  "errDelCache%s": "Delete cache: %s",
+  "errClearCache%s": "Clear cache: %s",
+  "errClearExpCache%s, ": "Clear expired cache: %s"
+}

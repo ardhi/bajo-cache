@@ -1,18 +1,9 @@
 import Keyv from 'keyv'
 import Store from './lib/store.js'
-import removeExpired from './lib/remove-expired.js'
-import getRs from './lib/result-set/get.js'
-import getGeneric from './lib/generic/get.js'
-import getFn from './lib/function/get.js'
-import removeRs from './lib/result-set/remove.js'
-import removeGeneric from './lib/generic/remove.js'
-import removeFn from './lib/function/remove.js'
-import setRs from './lib/result-set/set.js'
-import setGeneric from './lib/generic/set.js'
-import setFn from './lib/function/set.js'
-import clearRs from './lib/result-set/clear.js'
-import clearFn from './lib/function/clear.js'
-import clearGeneric from './lib/generic/clear.js'
+import { removeExpired } from './lib/util.js'
+import { get as getRs, set as setRs, clear as clearRs, remove as removeRs } from './lib/result-set.js'
+import { get as getGeneric, set as setGeneric, clear as clearGeneric, remove as removeGeneric } from './lib/generic.js'
+import { get as getFn, set as setFn, clear as clearFn, remove as removeFn } from './lib/function.js'
 
 /**
  * Plugin factory
@@ -34,34 +25,22 @@ async function factory (pkgName) {
       this.config = {
         connection: 'memory',
         default: {
-          ttl: 1000,
+          ttlDur: 1000,
           clearOnTrigger: false
         },
-        doboModel: {
-          disabled: [],
-          ttl: {},
-          clearOnTrigger: {}
-        },
+        dobo: {},
         externalPrefix: 'ext'
       }
-    }
-
-    init = async () => {
       this.fnCache = []
-      if (!this.app.dobo) return
-      const models = this.app.dobo.models.filter(model => !model.cacheable).map(m => m.name)
-      this.config.doboModel.disabled.push('CacheStorage', ...models)
     }
 
     start = async () => {
-      const { set, get, clear } = this
       let keyv
       if (this.app.dobo) {
         const store = new Store(this)
         keyv = new Keyv({ store })
       } else keyv = new Keyv()
       this.instance = keyv
-      if (this.app.dobo) this.app.dobo.cache = { get, set, clear }
       const fn = removeExpired.bind(this)
       setInterval(fn, 1000)
     }

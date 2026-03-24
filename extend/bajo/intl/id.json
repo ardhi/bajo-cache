@@ -1,0 +1,5 @@
+{
+  "errDelCache%s": "Hapus cache: %s",
+  "errClearCache%s": "Bersihkan cache: %s",
+  "errClearExpCache%s, ": "Bersihkan cache kadaluarsa: %s"
+}

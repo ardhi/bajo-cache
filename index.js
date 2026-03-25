@@ -25,9 +25,9 @@ async function factory (pkgName) {
       this.config = {
         connection: 'memory',
         default: {
-          ttlDur: 1000,
-          clearOnTrigger: false
+          ttlDur: '1s'
         },
+        removeExpiredDur: '1s',
         dobo: {},
         externalPrefix: 'ext'
       }
@@ -35,14 +35,10 @@ async function factory (pkgName) {
     }
 
     start = async () => {
-      let keyv
-      if (this.app.dobo) {
-        const store = new Store(this)
-        keyv = new Keyv({ store })
-      } else keyv = new Keyv()
-      this.instance = keyv
+      const store = this.app.dobo ? new Store(this) : undefined
+      this.instance = new Keyv({ store })
       const fn = removeExpired.bind(this)
-      setInterval(fn, 1000)
+      setInterval(fn, this.config.removeExpiredDur)
     }
 
     clear = async (opts = {}) => {

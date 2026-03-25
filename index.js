@@ -29,7 +29,7 @@ async function factory (pkgName) {
         },
         removeExpiredDur: '1s',
         dobo: {},
-        externalPrefix: 'ext'
+        exportPrefix: '~'
       }
       this.fnCache = []
     }

@@ -5,6 +5,7 @@
 - [2.3.0] Upgrade to ```keyv@5.6.0```
 - [2.3.0] File structure changes
 - [2.3.1] No longer use hook to invalidate cache
+- [2.3.2] Bring back exported route that accidently deleted
 
 ## 2025-12-21
 

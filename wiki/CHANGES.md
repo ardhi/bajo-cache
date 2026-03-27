@@ -1,5 +1,10 @@
 # Changes
 
+## 2026-03-27
+
+- [2.4.0] Add waibuDb schema for ```CacheStorage```
+- [2.4.0] Bug fix in ```storage.json``` model
+
 ## 2026-03-23
 
 - [2.3.0] Upgrade to ```keyv@5.6.0```

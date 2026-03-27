@@ -1,6 +1,7 @@
 {
-  "disabled": "all",
+  "disabled": ["create", "update"],
   "connection": "memory",
+  "attachment": false,
   "cache": false,
   "properties": [
     "id,string,4096,primary,true",

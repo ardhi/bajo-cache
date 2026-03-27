@@ -29,7 +29,11 @@ async function factory (pkgName) {
         },
         removeExpiredDur: '1s',
         dobo: {},
-        exportPrefix: '~'
+        exportPrefix: '~',
+        waibuAdmin: {
+          menuHandler: false,
+          modelDisabled: '*'
+        }
       }
       this.fnCache = []
     }

@@ -1,5 +1,10 @@
 {
   "errDelCache%s": "Delete cache: %s",
   "errClearCache%s": "Clear cache: %s",
-  "errClearExpCache%s, ": "Clear expired cache: %s"
+  "errClearExpCache%s, ": "Clear expired cache: %s",
+  "field": {
+    "content": "Content",
+    "ids": "IDs",
+    "exp": "Expire On"
+  }
 }

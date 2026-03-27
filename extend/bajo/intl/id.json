@@ -1,5 +1,10 @@
 {
   "errDelCache%s": "Hapus cache: %s",
   "errClearCache%s": "Bersihkan cache: %s",
-  "errClearExpCache%s, ": "Bersihkan cache kadaluarsa: %s"
+  "errClearExpCache%s, ": "Bersihkan cache kadaluarsa: %s",
+  "field": {
+    "content": "Isi",
+    "ids": "ID",
+    "exp": "Kadaluarsa"
+  }
 }

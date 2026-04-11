@@ -1,5 +1,9 @@
 # Changes
 
+## 2026-04-11
+
+- [2.4.1] Bug fix in ```storage.json```
+
 ## 2026-03-27
 
 - [2.4.0] Add waibuDb schema for ```CacheStorage```

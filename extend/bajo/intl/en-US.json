@@ -4,7 +4,7 @@
   "errClearExpCache%s, ": "Clear expired cache: %s",
   "field": {
     "content": "Content",
-    "ids": "IDs",
+    "action": "Action",
     "exp": "Expire On"
   }
 }

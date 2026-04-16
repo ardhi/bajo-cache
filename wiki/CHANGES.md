@@ -1,5 +1,14 @@
 # Changes
 
+## 2026-04-16
+
+- [2.5.0] Add ```afterRemoveRecord()``` hook for auto clearing cache
+- [2.5.0] Add ```afterUpdateRecord()``` hook for auto clearing cache
+- [2.5.0] Use the new ```dobo:dt``` feature for ```storage.exp``` field
+- [2.5.0] ```clear()``` can now clear certain keys/key patterns
+- [2.5.0] Change ```key``` structure to use md5 instead of base64
+- [2.5.0] Simplify cache ```set()``` ing
+
 ## 2026-04-11
 
 - [2.4.1] Bug fix in ```storage.json```

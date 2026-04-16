@@ -7,7 +7,14 @@
     "id,string,4096,primary,true",
     "content,text",
     "model,,50,true",
-    "ids,text",
-    "exp,integer"
+    "action,,50,true"
+  ],
+  "features": [
+    {
+      "name": "dobo:dt",
+      "field": "exp",
+      "type": "integer",
+      "formatInt": true
+    }
   ]
 }

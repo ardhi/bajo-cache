@@ -1,5 +1,11 @@
 # Changes
 
+## 2026-04-21
+
+- [2.5.1] Bug fix in all dobo's record hooks
+- [2.5.1] Bug fix in ```store.js```
+- [2.5.1] Default ttl for all models is now set to ```5s```
+
 ## 2026-04-16
 
 - [2.5.0] Add ```afterRemoveRecord()``` hook for auto clearing cache

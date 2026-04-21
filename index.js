@@ -25,7 +25,7 @@ async function factory (pkgName) {
       this.config = {
         connection: 'memory',
         default: {
-          ttlDur: '1s'
+          ttlDur: '5s'
         },
         removeExpiredDur: '1s',
         dobo: {},

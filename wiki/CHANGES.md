@@ -1,5 +1,10 @@
 # Changes
 
+## 2026-04-25
+
+- [2.7.0] Change options to format value using the new key set by dobo
+- [2.7.0] Remove ```options.retainOriginalValue``` since it is not needed anymore
+
 ## 2026-04-21
 
 - [2.5.1] Bug fix in all dobo's record hooks

@@ -47,25 +47,25 @@ async function factory (pkgName) {
 
     clear = async (opts = {}) => {
       if (opts.model) return await clearRs.call(this, opts)
-      if (opts.key.startsWith('fn:')) return await clearFn.call(this, opts)
+      if (opts.key && opts.key.startsWith('fn:')) return await clearFn.call(this, opts)
       return await clearGeneric.call(this, opts)
     }
 
     get = async (opts = {}) => {
       if (opts.model && (opts.filter || opts.id)) return await getRs.call(this, opts)
-      if (opts.key.startsWith('fn:')) return await getFn.call(this, opts)
+      if (opts.key && opts.key.startsWith('fn:')) return await getFn.call(this, opts)
       return await getGeneric.call(this, opts)
     }
 
     remove = async (opts = {}) => {
       if (opts.model && (opts.filter || opts.id)) return await removeRs.call(this, opts)
-      if (opts.key.startsWith('fn:')) return await removeFn.call(this, opts)
+      if (opts.key && opts.key.startsWith('fn:')) return await removeFn.call(this, opts)
       return await removeGeneric.call(this, opts)
     }
 
     set = async (opts = {}) => {
       if (opts.model && (opts.filter || opts.id)) return await setRs.call(this, opts)
-      if (opts.key.startsWith('fn:')) return await setFn.call(this, opts)
+      if (opts.key && opts.key.startsWith('fn:')) return await setFn.call(this, opts)
       return await setGeneric.call(this, opts)
     }
 

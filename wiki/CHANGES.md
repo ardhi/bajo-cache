@@ -1,5 +1,9 @@
 # Changes
 
+## 2026-06-10
+
+- [2.7.1] Bug fix in many places if cache's key is missing
+
 ## 2026-04-25
 
 - [2.7.0] Change options to format value using the new key set by dobo
